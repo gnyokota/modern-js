@@ -1,0 +1,23 @@
+{
+  "name": "modern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnyokota/modern-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnyokota/modern-js/issues"
+  },
+  "homepage": "https://github.com/gnyokota/modern-js#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
