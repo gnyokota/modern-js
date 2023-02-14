@@ -1,0 +1,24 @@
+declare const number: number;
+declare const numberString: string;
+declare const isValid: boolean;
+declare const isValidString: string;
+declare const numberStr: string;
+declare const strToNumber: number;
+declare const strToNumberFloat: number;
+declare const num1 = 100;
+declare const num2 = 50;
+declare const value: number;
+declare const valueRound: number;
+declare const valueCeil: number;
+declare const valueFloor: number;
+declare const rootSqr: number;
+declare const power: number;
+declare const random: number;
+declare const myName = "Giovana Yokota";
+declare const mySplit: string[];
+declare const numberSet: number[];
+declare function getKeyByValue(object: any, value: any): string;
+declare const data: {
+    firstName: string;
+    lastName: string;
+};

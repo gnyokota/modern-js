@@ -6,11 +6,11 @@
     "noImplicitAny": false,
     "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["./*.ts"],
+  "include": ["src/*.ts"],
   "exclude": ["node_modules"]
 }
