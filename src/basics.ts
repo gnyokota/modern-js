@@ -45,5 +45,17 @@ const data = {
   firstName: "Giovana",
   lastName: "Yokota",
 };
-
 console.log(getKeyByValue(data, "Giovana"));
+
+//date:
+const today = new Date();
+const birthday = new Date("02-13-1992");
+//I can also use 02/13/1992
+console.log(birthday);
+birthday.setMonth(7);
+console.log(birthday);
+
+//loop:
+for (let n in data) {
+  console.log(`${n}:${data[n]}`);
+}

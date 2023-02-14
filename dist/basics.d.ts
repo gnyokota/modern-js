@@ -22,3 +22,5 @@ declare const data: {
     firstName: string;
     lastName: string;
 };
+declare const today: Date;
+declare const birthday: Date;

@@ -31,3 +31,11 @@ const data = {
     lastName: "Yokota",
 };
 console.log(getKeyByValue(data, "Giovana"));
+const today = new Date();
+const birthday = new Date("02-13-1992");
+console.log(birthday);
+birthday.setMonth(7);
+console.log(birthday);
+for (let n in data) {
+    console.log(`${n}:${data[n]}`);
+}
