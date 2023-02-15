@@ -59,3 +59,36 @@ console.log(birthday);
 for (let n in data) {
   console.log(`${n}:${data[n]}`);
 }
+
+//window METHODS:
+//node: computer/system is the environment
+//client: window is the environment
+const height = window.outerHeight;
+console.log({height});
+const width = window.outerWidth;
+console.log({width});
+
+const loct = window.location;
+console.log(loct.hostname);
+console.log(loct.href);
+console.log(loct.search);
+// window.location.href = "https://google.com";
+// window.history.go(-1);
+const nav = window.navigator;
+console.log(nav.language);
+
+//let and const
+var a = 4;
+let b = 5;
+const c = 6;
+
+function test() {
+  a = 1;
+  b = 2;
+  const c = 3;
+
+  console.log(`function scope a:${a}, b:${b}, c:${c}`);
+}
+
+test();
+console.log(`global scope a:${a}, b:${b}, c:${c}`);

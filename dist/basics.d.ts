@@ -24,3 +24,11 @@ declare const data: {
 };
 declare const today: Date;
 declare const birthday: Date;
+declare const height: number;
+declare const width: number;
+declare const loct: Location;
+declare const nav: Navigator;
+declare var a: number;
+declare let b: number;
+declare const c = 6;
+declare function test(): void;
