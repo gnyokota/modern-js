@@ -58,7 +58,7 @@ header h1 {
 }
 
 /* Buttons */
-.btn {
+.btn-add {
   background-color: #333;
   color: #fff;
   border: none;
@@ -67,7 +67,7 @@ header h1 {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn-add:hover {
   background-color: #444;
 }
 
