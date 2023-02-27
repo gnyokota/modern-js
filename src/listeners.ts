@@ -42,7 +42,6 @@ document.querySelector("#item-list").addEventListener("click", () => {
 document.body.addEventListener("click", (e: any) => {
   if (e.target.className === "fa-solid fa-xmark") {
     e.target.parentElement.parentElement.remove();
-    console.log(e.target.parentElement.parentElement);
   }
 });
 
@@ -59,5 +58,19 @@ document.querySelector(".btn-add").addEventListener("click", (e) => {
   )).value;
   tasks.push(inputValue);
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
   e.preventDefault();
+
+  const ulItem = document.getElementById("item-list");
+  const liItem = document.createElement("li");
+  liItem.className = "collection-item";
+  liItem.innerHTML = `${JSON.parse(localStorage.getItem("tasks")).at(-1)} `;
+  const buttonItem = document.createElement("button");
+  buttonItem.className = "remove-item btn-link text-red";
+  const iItem = document.createElement("i");
+  iItem.className = "fa-solid fa-xmark";
+  ulItem.appendChild(liItem);
+  liItem.appendChild(buttonItem);
+  buttonItem.appendChild(iItem);
+  console.log(JSON.parse(localStorage.getItem("tasks"))[0]);
 });
