@@ -1,14 +1,17 @@
-const li = document.createElement("li");
-li.className = "collection-item";
-li.setAttribute("title", "New Item");
-li.appendChild(document.createTextNode(`Hello world`));
-document.querySelector("ul.collection").appendChild(li);
-const button = document.createElement("button");
-button.className = "remove-item btn-link text-red";
-const allUl = document.querySelectorAll("li");
-allUl[allUl.length - 1].appendChild(button);
-const iTag = document.createElement("i");
-iTag.style.padding = "0 4px";
-iTag.className = "fa-solid fa-xmark";
-const buttons = document.getElementsByClassName("remove-item");
-buttons[buttons.length - 1].appendChild(iTag);
+function Person(name, age, dob) {
+    this.name = name;
+    this.age = age;
+    this.brithday = new Date(dob);
+}
+console.log(new Person("Giovana", 30, "01-16-1992"));
+function Person2(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.brithday = new Date(dob);
+}
+Person2.prototype.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+};
+const person2 = new Person2("Giovana", "Yokota", "01-16-1992");
+console.log(person2);
+console.log(person2.getFullName());
