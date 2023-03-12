@@ -10,13 +10,33 @@ class EasyHTTP {
   }
 
   async post(url, user) {
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async delete(url) {
+    try {
+      await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      return "User successfully deleted";
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 }
 
