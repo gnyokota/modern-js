@@ -45,3 +45,17 @@ console.log(regTest(/[A-Za-z]ray/, "Gray"));
 console.log(regTest(/[^A]ray/, "Gray"));
 //quantifier: {min,max}
 console.log(regTest(/He{2,4}o/, "Hello"));
+//one or more character
+console.log(regTest(/\w+/, "Hello"));
+//non-word character
+console.log(regTest(/\W+/, "!!"));
+//matches white space
+console.log(regTest(/hello\sthere/i, "Hello there"));
+//one or more digts
+console.log(regTest(/\d+/, "1234"));
+//non-digit character
+console.log(regTest(/\D+/, "!!"));
+//only followed by:
+console.log(regTest(/He(?=l)/i, "Hello"));
+//not: !
+console.log(regTest(/He(?!l)/i, "Hello"));
