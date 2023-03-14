@@ -31,3 +31,26 @@ const validateEmail = () => {
     }
 };
 document.getElementById("email").addEventListener("blur", validateEmail);
+const Person = {
+    firstName: "Anne Doe",
+    email: "annDoes@email.com",
+    phone: "1111-222",
+};
+const { firstName, email, phone } = Person;
+console.log({ firstName });
+const mapOne = new Map();
+const keyOne = "something";
+const keyTwo = {};
+mapOne.set(keyOne, "value of keyOne");
+mapOne.set(keyTwo, "value of keyTwo");
+for (let [key, value] of mapOne) {
+    console.log(`key:${key} and value:${value}`);
+}
+const setOne = new Set();
+setOne.add("a string");
+setOne.add({ name: "John" });
+console.log({ setOne });
+const value = setOne.values();
+for (let item of setOne) {
+    console.log(item);
+}
