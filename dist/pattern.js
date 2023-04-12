@@ -55,3 +55,29 @@ const manager = StaffFactory.getStaffInstance("Manager");
 console.log(manager.getSalary());
 const developer = StaffFactory.getStaffInstance("Developer");
 console.log(developer.getSalary());
+class EventObserver {
+    constructor() {
+        this.observers = [];
+    }
+    subscribe(func) {
+        this.observers.push(func);
+        console.log(`Subscribe to the function: ${func.name}`);
+    }
+    unsubscribe(func) {
+        this.observers = this.observers.filter((it) => it !== func);
+        console.log(this.observers);
+        console.log(`Unsubscribe to the function: ${func.name}`);
+    }
+    fire() {
+        this.observers.forEach((it) => it.call());
+    }
+}
+const click = new EventObserver();
+document
+    .querySelector(".sub-ms")
+    .addEventListener("click", () => click.subscribe(getCurrentMilliSeconds));
+document
+    .querySelector(".unsub-ms")
+    .addEventListener("click", () => click.unsubscribe(getCurrentMilliSeconds));
+document.querySelector(".fire").addEventListener("click", () => click.fire());
+const getCurrentMilliSeconds = () => console.log(`Current Milliseconds ${new Date().getMilliseconds()}`);

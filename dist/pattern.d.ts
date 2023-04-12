@@ -27,3 +27,12 @@ declare class StaffFactory {
 }
 declare const manager: IStaff;
 declare const developer: IStaff;
+declare class EventObserver {
+    private observers;
+    constructor();
+    subscribe(func: any): void;
+    unsubscribe(func: any): void;
+    fire(): void;
+}
+declare const click: EventObserver;
+declare const getCurrentMilliSeconds: () => void;
