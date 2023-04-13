@@ -115,3 +115,51 @@ document.querySelector(".fire").addEventListener("click", () => click.fire());
 
 const getCurrentMilliSeconds = () =>
   console.log(`Current Milliseconds ${new Date().getMilliseconds()}`);
+
+//4. Mediator pattern:
+class User {
+  name: string;
+  chatroom: any;
+  constructor(name: string) {
+    this.name = name;
+    this.chatroom = null;
+  }
+
+  send(message: string, to: User) {
+    this.chatroom.send(message, this, to);
+  }
+  receive(message: string, from: User) {
+    console.log(`${from.name} to ${this.name}: ${message}`);
+  }
+}
+
+class Chatroom {
+  users: Object;
+  constructor() {
+    this.users = {};
+  }
+
+  register(user) {
+    this.users[user.name] = user;
+    user.chatroom = this;
+  }
+  send(message, from, to) {
+    if (to) {
+      to.receive(message, from);
+    } else {
+      for (to in this.users) {
+        if (this.users[to] !== from) {
+          this.users[to].receive(message, from);
+        }
+      }
+    }
+  }
+}
+
+const john = new User("John");
+const sarah = new User("Sarah");
+const chartroom = new Chatroom();
+
+chartroom.register(john);
+chartroom.register(sarah);
+john.send("Hello Sarah", sarah);

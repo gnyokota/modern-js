@@ -36,3 +36,19 @@ declare class EventObserver {
 }
 declare const click: EventObserver;
 declare const getCurrentMilliSeconds: () => void;
+declare class User {
+    name: string;
+    chatroom: any;
+    constructor(name: string);
+    send(message: string, to: User): void;
+    receive(message: string, from: User): void;
+}
+declare class Chatroom {
+    users: Object;
+    constructor();
+    register(user: any): void;
+    send(message: any, from: any, to: any): void;
+}
+declare const john: User;
+declare const sarah: User;
+declare const chartroom: Chatroom;
