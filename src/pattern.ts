@@ -46,7 +46,7 @@ myInstanceA.someLogic();
 const myInstanceB = Singleton.createInstance();
 myInstanceB.someLogic();
 
-//Factory pattern:
+//2. Factory pattern:
 interface IStaff {
   getSalary(): string;
 }
